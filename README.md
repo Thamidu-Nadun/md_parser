@@ -17,6 +17,11 @@ A powerful, flexible, and feature-rich Markdown parser designed to bring your te
 *   **🎨 Custom Callouts**: Includes 5 stylish, attention-grabbing callout boxes (Tip, Note, Warning, Info, Error).
 *   **🔌 Extensible**: Easily inject your own `markdown-it` plugins to add new functionality.
 
+## 📚 Full Documentation
+
+> [!TIP]
+> For a deep dive into every feature, including basic Markdown syntax and advanced customization, please check out our **[full documentation in the `docs` folder](./docs)**.
+
 ## 📦 Installation
 
 Get started in seconds by installing the package from npm.
