@@ -1,0 +1,48 @@
+{
+  "name": "@thamidu-nadun/md_parser",
+  "version": "1.0.0",
+  "description": "Parse markdown content to html with custom plugins. Ideal for tech blog. Everything right out-of-the-box.",
+  "main": "dist/bundle.min.cjs.js",
+  "module": "dist/bundle.es.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "vitest",
+    "webpack-build": "webpack",
+    "vite-build": "vite build"
+  },
+  "keywords": [
+    "markdown",
+    "nadun",
+    "nadun-dev",
+    "md",
+    "mdParser",
+    "md2html",
+    "md-to-html"
+  ],
+  "author": "Nadun",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-front-matter": "^0.2.4",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-task-lists": "^2.1.1"
+  },
+  "devDependencies": {
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "terser-webpack-plugin": "^5.3.14",
+    "vite": "^7.0.2",
+    "vitest": "^3.2.4",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}
