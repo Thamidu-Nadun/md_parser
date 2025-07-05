@@ -24,8 +24,15 @@
     "md2html",
     "md-to-html"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thamidu-Nadun/md_parser.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Nadun",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",

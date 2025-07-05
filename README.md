@@ -5,17 +5,15 @@
 
 A powerful, flexible, and feature-rich Markdown parser designed to bring your text to life! 🚀 Easily convert Markdown to HTML with support for front-matter, emojis, task lists, KaTeX math expressions, and beautiful custom callouts. Perfect for blogs, documentation sites, and any project that needs a little extra sparkle. ✨
 
-![Demo GIF of code editing](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTBmMjFlZDVmMjI5Y2YyYjY4YjU3MjAzY2U3ZTA3MjQ0ZDY4YmQzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13FrpeVH09gWby/giphy.gif)
-
 ## 🌟 Key Features
 
-*   **📝 Front Matter**: Extracts YAML metadata right from the top of your files.
-*   **😄 Emojis**: Full emoji support (`:tada:` becomes 🎉).
-*   **🦶 Footnotes**: Adds clean and simple footnotes.
-*   **✅ Task Lists**: Renders GitHub-style task lists.
-*   **🧮 KaTeX**: Supports elegant mathematical typesetting.
-*   **🎨 Custom Callouts**: Includes 5 stylish, attention-grabbing callout boxes (Tip, Note, Warning, Info, Error).
-*   **🔌 Extensible**: Easily inject your own `markdown-it` plugins to add new functionality.
+- **📝 Front Matter**: Extracts YAML metadata right from the top of your files.
+- **😄 Emojis**: Full emoji support (`:tada:` becomes 🎉).
+- **🦶 Footnotes**: Adds clean and simple footnotes.
+- **✅ Task Lists**: Renders GitHub-style task lists.
+- **🧮 KaTeX**: Supports elegant mathematical typesetting.
+- **🎨 Custom Callouts**: Includes 5 stylish, attention-grabbing callout boxes (Tip, Note, Warning, Info, Error).
+- **🔌 Extensible**: Easily inject your own `markdown-it` plugins to add new functionality.
 
 ## 📚 Full Documentation
 
@@ -62,15 +60,16 @@ console.log('HTML Output:', html);
 
 Make your documentation pop with 5 different types of callout blocks. Just wrap your content, and the parser will transform it into beautifully styled HTML `div` elements, complete with icons.
 
-| Markdown Syntax | Purpose |
-| --- | --- |
-| `:::tip` | A helpful tip or suggestion. |
-| `:::note` | A neutral piece of information. |
-| `:::info` | An important piece of information. |
-| `:::warning` | A warning or potential pitfall. |
-| `:::error` | An error or critical warning. |
+| Markdown Syntax | Purpose                            |
+| --------------- | ---------------------------------- |
+| `:::tip`        | A helpful tip or suggestion.       |
+| `:::note`       | A neutral piece of information.    |
+| `:::info`       | An important piece of information. |
+| `:::warning`    | A warning or potential pitfall.    |
+| `:::error`      | An error or critical warning.      |
 
 **Example in your Markdown file:**
+
 ```markdown
 :::tip
 Don't forget to stay hydrated! 💧
@@ -81,6 +80,7 @@ Don't forget to stay hydrated! 💧
 > The rich styling for these callouts (colors, borders) is applied via CSS classes. For `README.md` files viewed directly on platforms like **GitHub** or **NPM**, we recommend using GitHub's native alert syntax for a consistent look, as your custom CSS won't be applied there.
 
 **Example for GitHub (`README.md`):**
+
 ```markdown
 > [!TIP]
 > Don't forget to stay hydrated! 💧
@@ -91,19 +91,19 @@ Don't forget to stay hydrated! 💧
 You can easily add any `markdown-it` compatible plugin using the `inject_plugin` function. For example, let's add a plugin to highlight text wrapped in `==`.
 
 ```javascript
-import { renderer, inject_plugin } from '@thamidu-nadun/md_parser';
-import markdownitMark from 'markdown-it-mark';
+import { renderer, inject_plugin } from "@thamidu-nadun/md_parser";
+import markdownitMark from "markdown-it-mark";
 
 // First, install the plugin: npm install markdown-it-mark
 
 const highlightPlugin = {
-    plugin: markdownitMark
+  plugin: markdownitMark,
 };
 
 // Inject the new plugin
 inject_plugin(highlightPlugin);
 
-const markdown = 'You can ==highlight text== very easily!';
+const markdown = "You can ==highlight text== very easily!";
 const { html } = renderer(markdown);
 
 console.log(html);
