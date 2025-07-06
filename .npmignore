@@ -1,0 +1,7 @@
+test/
+docs/
+node_modules/
+.vscode/
+.publish.cmd
+webpack.config.js
+vite.config.js

@@ -8,12 +8,17 @@ import yaml from 'js-yaml';
 import call_out_boxes from './callOut.js';
 import markdownItKatex from "markdown-it-katex";
 
-/**
+/** example:
  * The data at the start
  * date: 12/12/2025
  */
 let _current_front_data = "";
 
+
+/**
+ * List of default plugins
+ * @constant {plugin: Function, properties: object|Function|null}
+ */
 const plugins = [
     { plugin: Emoji, properties: {} },
     { plugin: MarkdownItFootNote, properties: {} },
@@ -41,8 +46,16 @@ plugins.forEach((plugin) => {
     markdown.use(plugin.plugin, plugin.properties);
 });
 
+
 /**
+ * 
  * Inject Client Plugins
+ * @param {Object} plugin - The plugin Object
+ * @param {Function} plugin.plugin - The main function to be used.
+ * @param {Object|Function|null} - plugin.properties - Optional configuration for the plugin.
+ * @returns {void}
+ *
+ * @throws {Error} - Throws if the plugin object is invalid or has an unsupported structure.
  */
 export const inject_plugin = (plugin) => {
     if (
@@ -60,7 +73,15 @@ export const inject_plugin = (plugin) => {
     markdown.use(plugin.plugin, plugin.properties);
 };
 
-export const renderer = (content) => {
+/**
+ * 
+ * @param {string} content - markdown content
+ * @returns {{html: string, front_data: string}}
+ * html: HTML content
+ * 
+ * font_data: The data at the beginning of markdown as JSON
+ */
+const renderer = (content) => {
     _current_front_data = "";
     const html = markdown.render(content);
     return {
@@ -69,4 +90,4 @@ export const renderer = (content) => {
     };
 };
 
-// export { renderer, inject_plugin };
+export default renderer;
