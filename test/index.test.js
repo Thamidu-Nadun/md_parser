@@ -1,4 +1,4 @@
-import { renderer, inject_plugin } from '../src/index.js';
+import renderer, { inject_plugin } from '../src/index.js';
 import { describe, it, expect } from 'vitest';
 
 describe("Markdown Parser Test", () => {

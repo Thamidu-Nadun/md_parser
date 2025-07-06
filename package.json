@@ -8,7 +8,7 @@
     "start": "node .",
     "dev": "nodemon .",
     "test": "vitest",
-    "vite-build": "vite build"
+    "build": "vite build"
   },
   "keywords": [
     "markdown",
